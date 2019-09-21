@@ -1,0 +1,50 @@
+<app-nav-bar></app-nav-bar>
+<div class="contact">
+    <img src="assets/images/contact-us.jpg" alt="">
+    <div class="above-img-header">
+        CONTACT US ABOUT MY SOFTWARE!
+    </div>
+    <div class="above-img-text">
+        You can tell me about your opinion!
+    </div>
+    <div class="content container">
+       <!-- Default form contact -->
+        <form class="text-center p-5">
+
+            <p class="h4 mb-4">Contact us</p>
+        
+            <!-- Name -->
+            <input type="text" id="defaultContactFormName" mdbInput
+            class="form-control mb-4" placeholder="Name">
+        
+            <!-- Email -->
+            <input type="email"  id="defaultContactFormEmail" mdbInput
+            class="form-control mb-4" placeholder="E-mail">
+        
+            <!-- Subject -->
+            <label>Subject</label>
+            <select class="browser-default custom-select mb-4">
+            <option value="" disabled>Choose option</option>
+            <option value="1" selected>Feedback</option>
+            <option value="2">Report a bug</option>
+            <option value="3">Feature request</option>
+            <option value="4">Feature request</option>
+            </select>
+        
+            <!-- Message -->
+            <div class="form-group">
+            <textarea class="form-control rounded-0" mdbInput id="exampleFormControlTextarea2"
+                rows="3" placeholder="Message"></textarea>
+            </div>
+        
+            <!-- Copy -->
+            <mdb-checkbox [default]="true" class="mb-4">Send me a copy of this message</mdb-checkbox>
+        
+            <!-- Send button -->
+            <button mdbBtn color="info" outline="true" block="true" class="z-depth-0 my-4 waves-effect"
+            mdbWavesEffect type="submit" [disabled]="disabledSubmitButton">Send</button>
+        
+        </form>
+        <!-- Default form contact -->
+            </div>
+</div>

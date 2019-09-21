@@ -1,0 +1,18 @@
+<app-nav-bar></app-nav-bar>
+<div class="row about">
+        <div class="card col-md-3 col-sm-5">
+            <img src="assets/images/me.jpg" class="card-img-top mb-5" alt="...">
+            <div class="card-body">
+                <p class="my-name ml-3">Trần Tâm Tỏ</p>
+            </div>
+        </div>
+        <div class="info col-md-8 col-sm-6">
+
+            <h4 style="font-weight: bold">Author</h4>
+            <div><strong>Name: </strong><span>{{ myInfo.lastName + " " + myInfo.firstName}}</span></div>
+            <div><strong>Birthday: </strong>{{ myInfo.birthday }}</div>
+            <div><strong>Phone Number: </strong><a href="tel:+84{{myInfo.phone}}"></a>0{{ myInfo.phone }}</div>
+            <div><strong>Email: </strong><a href="mailto:{{myInfo.email}}">{{ myInfo.email }}</a></div>
+            <div><strong>Address: </strong>{{ myInfo.address }}</div>
+        </div>
+    </div>

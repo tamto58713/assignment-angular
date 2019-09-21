@@ -4,31 +4,45 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { SideNavComponent } from './side-nav/side-nav.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { CarouselComponent } from './carousel/carousel.component';
-import { SideTopServerComponent } from './side-top-server/side-top-server.component';
-import { ContactPageComponent } from './contact-page/contact-page.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { HomeComponent } from './pages/home/home.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { SideTopServerComponent } from './components/side-top-server/side-top-server.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { FormsModule } from '@angular/forms';
+import { LoggedinBarComponent } from './components/loggedin-bar/loggedin-bar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ChangePasswordComponent } from './pages/change-password/change-password.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ListSubjectsComponent } from './components/list-subjects/list-subjects.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     SideNavComponent,
-    HomePageComponent,
+    HomeComponent,
     CarouselComponent,
     SideTopServerComponent,
-    ContactPageComponent,
+    ContactComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoggedinBarComponent,
+    ChangePasswordComponent,
+    AboutComponent,
+    ListSubjectsComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

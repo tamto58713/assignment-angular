@@ -1,0 +1,22 @@
+.about {
+    background: rgb(250, 250, 250);
+    .my-name {
+        font-weight: bold;
+    }
+    
+    .card {
+        border: none;
+        margin-top: 70px;
+        img {
+            transform: rotate(-90deg);
+        }
+    }
+    
+        
+    .info {
+        display: table;
+        margin: 30px;
+        line-height: 50px;
+    }
+    
+}
