@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
+cors = require('cors')
 const mongoose = require("mongoose");
 const config = require('./config')
 
@@ -11,33 +12,40 @@ mongoose.Promise = global.Promise;
 mongoose.connect(
   config.mongoURL,
   { useNewUrlParser: true }
-);
+).then(() => console.log("Database is Connected!"), (err) => console.log("Can't connect to the Database"))
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../dist/assignment-angular')))
-
+app.use(cors())
 
 app.post('/register', (req, res) => {
+  console.log(req.body)
   const newUser = new User({
-    name: req.body.fullName,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    phone: req.body.phone
   })
-  newUser.save().then(rec => {
-    res.status(201).json(rec)
+  newUser.save().then(user => {
+    res.json(user)
   })
 })
 
 app.post('/login', (req, res) => {
+  let errs = [], user = {}
   User.findOne({email: req.body.email}).then(loginUser => {
-
-    if(loginUser.password !== req.body.password) {
-      return res.status(401).json({message: 'Invalid username or password'})
+    if (!loginUser) {
+      errs.push({name: "No UserName"})
     }
-    res.status(200).json({status: "Logged in"})
+    else if (loginUser.password !== req.body.password) {
+      errs.push({name: "Wrong password"})
+    }
+    else
+      user = loginUser
 
+    res.json({user: user, errs: errs})
   })
-
 })
 
 app.get('/users', (req, res) => {

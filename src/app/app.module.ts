@@ -12,7 +12,7 @@ import { SideTopServerComponent } from './components/side-top-server/side-top-se
 import { ContactComponent } from './pages/contact/contact.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoggedinBarComponent } from './components/loggedin-bar/loggedin-bar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ChangePasswordComponent } from './pages/change-password/change-password.component';
@@ -42,7 +42,8 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

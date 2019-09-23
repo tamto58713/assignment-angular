@@ -10,7 +10,7 @@ export class AuthService {
   constructor(private _router: Router, private _http: HttpClient) { }
   register(user) {
     return this._http.post('/register', user);
-    // localStorage.setItem('user', user);
+    localStorage.setItem('user', user);
   }
   login(user) {
     console.log(`this is ${user}`)

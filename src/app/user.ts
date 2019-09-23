@@ -4,9 +4,5 @@ export interface User {
     lastName ?: string;
     email: string;
     password: string;
-    birthday ?: Date;
-    schoolFee ?: Float32Array;
-    marks ?: Object;
-    courses ?: ArrayBuffer;
-    completed ?: ArrayBuffer;
+    phone ?: string;
 }

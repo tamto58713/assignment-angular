@@ -12,20 +12,20 @@
         <mdb-card-body class="px-lg-5 pt-0">
       
           <!-- Form -->
-          <form class="text-center" style="color: #757575;">
+          <form class="text-center" style="color: #757575;" (ngSubmit)="register(user)">
       
             <div class="form-row">
               <div class="col">
                 <!-- First name -->
                 <div class="md-form">
-                  <input type="text" id="materialRegisterFormFirstName" class="form-control" mdbInput required autofocus>
+                  <input [(ngModel)]="user.firstName" name="firstName" type="text" id="materialRegisterFormFirstName" class="form-control" mdbInput required autofocus>
                   <label for="materialRegisterFormFirstName">First name</label>
                 </div>
               </div>
               <div class="col">
                 <!-- Last name -->
                 <div class="md-form">
-                  <input type="text" id="materialRegisterFormLastName" class="form-control" mdbInput required>
+                  <input [(ngModel)]="user.lastName" name="lastName" type="text" id="materialRegisterFormLastName" class="form-control" mdbInput required>
                   <label for="materialRegisterFormLastName">Last name</label>
                 </div>
               </div>
@@ -33,13 +33,13 @@
       
             <!-- E-mail -->
             <div class="md-form mt-0">
-              <input type="email" id="materialRegisterFormEmail" class="form-control" mdbInput required>
+              <input [(ngModel)]="user.email" type="email" name="email" id="materialRegisterFormEmail" class="form-control" mdbInput required>
               <label for="materialRegisterFormEmail">E-mail</label>
             </div>
       
             <!-- Password -->
             <div class="md-form">
-              <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock"
+              <input [(ngModel)]="user.password" type="password" name="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock"
                 mdbInput required>
               <label for="materialRegisterFormPassword">Password</label>
               <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
@@ -49,7 +49,7 @@
       
             <!-- Phone number -->
             <div class="md-form">
-              <input type="text" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock"
+              <input [(ngModel)]="user.phone" type="text" name="phone" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock"
                 mdbInput>
               <label for="materialRegisterFormPhone">Phone number</label>
               <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">

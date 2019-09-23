@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AuthService } from "../../services/auth.service"
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
-  images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
+  constructor(private authService: AuthService) { }
+  isLoggedIn = false;
   ngOnInit() {
+    if (this.authService.isAuthenticated())
+      this.isLoggedIn = true;
   }
 
 }
