@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: "about", component: AboutComponent},
   { path: "contact", component: ContactComponent},
   { path: "setting/security", component: ChangePasswordComponent},
-  { path: "test", component: ExamComponent}
+  { path: "test/:id", component: ExamComponent}
 
 ];
 

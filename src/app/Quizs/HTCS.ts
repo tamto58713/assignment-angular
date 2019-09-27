@@ -1,4 +1,4 @@
-const HTCS = [
+export const HTCS = [
     {
        "Id":25820,
        "Text":"Sử dụng phần tử nào của HTML5 để xem phim trên Web?",
