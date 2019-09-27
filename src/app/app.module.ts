@@ -19,7 +19,8 @@ import { ChangePasswordComponent } from './pages/change-password/change-password
 import { AboutComponent } from './pages/about/about.component';
 import { ListSubjectsComponent } from './components/list-subjects/list-subjects.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ExamComponent } from './pages/exam/exam.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     ChangePasswordComponent,
     AboutComponent,
     ListSubjectsComponent,
-    PaginationComponent
+    PaginationComponent,
+    ExamComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     MDBBootstrapModule.forRoot(),
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

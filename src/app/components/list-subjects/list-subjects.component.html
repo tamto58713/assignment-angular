@@ -1,8 +1,33 @@
-<div class="card col-sm-4 ml-5 mb-5 text-center" *ngFor="let subject of listSubjects">
-        <img [src]="'assets/images/logos/' + subject.imageUrl" alt="hehe" class="card-img-top">
-        <div class="card-body">
-            <div class="card-title">
-                {{subject.name}}
-            </div>
-        </div>
-</div>
+    <table class="table">
+        <tbody>
+            <tr *ngFor="let i of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] | paginate: config">
+                <td >
+                    <div class="card text-center ">
+                        <div class="card-body">
+                            <img class="card-img-top" draggable="false"  [src]="'assets/images/logos/' + listSubjects[i * 2].imageUrl" alt="hehe">
+                            <div class="card-title">
+                                {{ listSubjects[i * 2].name }}
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td >
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <img class="card-img-top" draggable="false"  [src]="'assets/images/logos/' + listSubjects[i * 2 + 1].imageUrl" alt="hehe">
+                            <div class="card-title">
+                                {{ listSubjects[i * 2 + 1].name }}
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+       
+                <i [ngClass]="{'disable': ceil(config.currentPage) === 1}" style="font-size: 30px; color: #a5f; margin: 0 15px" class="fas fa-hand-point-up" (click)="onGetFirstPage()"></i>
+                <i [ngClass]="{'disable': ceil(config.currentPage) === 1}" style="font-size: 30px; color: #a5f; margin: 0 15px" class="fas fa-hand-point-left" (click)="onPrevPage()" ></i>
+                <i [ngClass]="{'disable': ceil(config.currentPage) === ceil(config.totalItems / config.itemsPerPage)}" style="font-size: 30px; color: #a5f; margin: 0 15px" class="fas fa-hand-point-right" (click)="onNextPage()"></i>
+                <i [ngClass]="{'disable': ceil(config.currentPage) === ceil(config.totalItems / config.itemsPerPage)}" style="font-size: 30px; color: #a5f; margin: 0 15px" class="fas fa-hand-point-down" (click)="onGetLastPage()"></i>

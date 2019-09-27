@@ -6,6 +6,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ChangePasswordComponent } from './pages/change-password/change-password.component';
 import { AboutComponent } from './pages/about/about.component';
+import { ExamComponent } from './pages/exam/exam.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: "about", component: AboutComponent},
   { path: "contact", component: ContactComponent},
-  { path: "setting/security", component: ChangePasswordComponent}
+  { path: "setting/security", component: ChangePasswordComponent},
+  { path: "test", component: ExamComponent}
 
 ];
 

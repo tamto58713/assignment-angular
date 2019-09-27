@@ -1,0 +1,25 @@
+<div class="container">
+    <h1 class="text-center">Exam</h1>
+    <h5 class="text-right">Time: {{format(time)}}</h5>
+    <table class="table" style="border: none">
+        <tbody>
+            <tr *ngFor="let subject of listSubjects; let i = index">
+            <td>
+                <div class="card" style="border: none">
+                    <div class="card-title">
+                        Sentence {{i + 1}}/77: {{subject.Text}}
+                    </div>
+                    <div class="card-body text-left">
+                        <mdb-checkbox (change)="changed(1, i)" [checked]="listChoose[i] === 1" [default]="true">{{ subject.Answers[0].Text}}</mdb-checkbox>
+                        <mdb-checkbox (change)="changed(2, i)" [checked]="listChoose[i] === 2" [default]="true">{{ subject.Answers[1].Text}}</mdb-checkbox>
+                        <mdb-checkbox *ngIf="subject.Answers[2]" (change)="changed(3, i)" [checked]="listChoose[i] === 3" [default]="true">{{ subject.Answers[2].Text}}</mdb-checkbox>
+                        <mdb-checkbox *ngIf="subject.Answers[3]" (change)="changed(4, i)" [checked]="listChoose[i] === 4" [default]="true">{{ subject.Answers[3].Text}}</mdb-checkbox>
+                        
+                    </div>
+                </div>
+            </td> 
+            </tr>
+        </tbody>
+    </table>
+
+</div>
