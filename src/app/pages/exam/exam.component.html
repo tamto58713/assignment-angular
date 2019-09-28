@@ -6,10 +6,11 @@
             <tr *ngFor="let subject of listSubjects; let i = index">
             <td>
                 <div class="card" style="border: none">
-                    <div class="card-title">
-                        Sentence {{i + 1}}/77: {{subject.Text}}
+                    <div class="card-title" style="font-family: 'Prata', serif; ">
+                        <strong><span style="color: #222; font-weight: 500"> Sentence {{ i + 1 }}/77: </span><span style="font-size: 1.1em; font-weight: bold"> {{ subject.Text }} </span></strong>
                     </div>
-                    <div class="card-body text-left">
+                    <div class="card-body text-left" style="font-family: 'Roboto Slab', serif;
+                    ">
                         <mdb-checkbox (change)="changed(1, i)" [checked]="listChoose[i] === 1" [default]="true">{{ subject.Answers[0].Text}}</mdb-checkbox>
                         <mdb-checkbox (change)="changed(2, i)" [checked]="listChoose[i] === 2" [default]="true">{{ subject.Answers[1].Text}}</mdb-checkbox>
                         <mdb-checkbox *ngIf="subject.Answers[2]" (change)="changed(3, i)" [checked]="listChoose[i] === 3" [default]="true">{{ subject.Answers[2].Text}}</mdb-checkbox>
