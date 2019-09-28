@@ -8,6 +8,7 @@ import { ChangePasswordComponent } from './pages/change-password/change-password
 import { AboutComponent } from './pages/about/about.component';
 import { ExamComponent } from './pages/exam/exam.component';
 import { ChangeProfileComponent } from './pages/change-profile/change-profile.component';
+import { QandAComponent } from './pages/qand-a/qand-a.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: "about", component: AboutComponent},
   { path: "contact", component: ContactComponent},
+  { path: "q&a", component: QandAComponent},
   { path: "setting/security", component: ChangePasswordComponent},
   { path: "setting/profile", component: ChangeProfileComponent},
   { path: "test/:id", component: ExamComponent}

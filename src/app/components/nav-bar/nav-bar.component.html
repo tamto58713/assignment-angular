@@ -1,21 +1,23 @@
 <div class="navbar">
-  <ul>
-    <li><a routerLink="/">Home</a></li>
-    <li><a routerLink="/about">About</a></li>
-    <li><a routerLink="/contact">Contact</a></li>
-    <li><a routerLink="/Q$A">Q&A</a></li>
-  </ul>
-  <ul class="ml-auto mb-3 p-0">
-    <!-- <li class="nav-item" *ngIf="isLoggedIn">
-      <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="cog"></mdb-icon> Settings</a>
-    </li> -->
-
-    <li>
-        <div class="btn-group" *ngIf="!isLoggedIn">
-            <a routerLink="/login"><button mdbBtn type="button" color="dark" class="waves-light mr-1" size="sm" mdbWavesEffect>Sign in</button></a> 
-            <a routerLink="/register"><button mdbBtn type="button" color="dark" class="waves-light" size="sm" mdbWavesEffect>Sign up</button></a>
+  <div class="icon">
+    <span (click)="onClickIcon()" id="toggle-icon"></span>
+  </div>
+      <ul class="nav" [ngClass]="{'visible': !isHidden, 'hidden': isHidden}"> 
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/about">About</a></li>
+          <li><a routerLink="/contact">Contact</a></li>
+          <li><a routerLink="/q&a">Q&A</a></li>
+          <div id="log-icon">
+          <li *ngIf="isLoggedIn">
+              <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="cog"></mdb-icon> Settings</a>
+          </li>
+        
+          <li>
+              <div class="btn-group" *ngIf="!isLoggedIn">
+                  <a routerLink="/login"><button mdbBtn type="button" color="dark" class="waves-light mr-1" size="sm" mdbWavesEffect>Sign in</button></a> 
+                  <a routerLink="/register"><button mdbBtn type="button" color="dark" class="waves-light" size="sm" mdbWavesEffect>Sign up</button></a>
+              </div>
+        </li>
         </div>
-    </li>
-
-  </ul>
-</div>
+      </ul>
+  </div>

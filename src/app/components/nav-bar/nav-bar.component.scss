@@ -1,33 +1,132 @@
 $info: #17a2b8;
 
+
+@mixin toggle-icon {
+    z-index: 4;
+    display: block;
+    width: 20px;
+    height: 4px;
+    background: #000;
+    position: absolute;
+    content: "";
+}
+
+@mixin medium-desktop {
+    .icon {
+        cursor: pointer;
+        #toggle-icon {
+            @include toggle-icon();
+            top: 20px;
+            right: 15px;
+        }
+    
+        #toggle-icon::before {
+            @include toggle-icon();
+            top: -6px;  
+        }
+    
+        #toggle-icon::after {
+            @include toggle-icon();
+            top: 6px;  
+        }
+    }
+   
+    .visible,
+    .hidden {
+        overflow: hidden;
+    /* This container should not have padding, borders, etc. */
+    }
+
+
+    .visible {
+        height: 200px;
+        top: 0px;   
+    }
+    .hidden {
+        top: -100px;
+        height: 58px;
+        visibility: hidden;
+        transition: visibility 0ms;
+    }
+
+    ul {
+        padding-top: 1em;
+        background: $info;
+        width: 100%;
+        position: absolute;
+        transition-duration: .5s;
+        li {
+            display: block;
+            margin-top: 0.5em;
+        }
+    }
+    
+    #log-icon {
+        position: absolute;
+        right: 10px; 
+        bottom: 10px;
+        display: inline-block;
+    }
+
+}
+
+@mixin large-desktop {
+    flex-grow: 1;
+    padding-top: 0.1em;
+    ul {
+        display: inline-block;
+        list-style: none;
+        li {
+            display: inline-block;
+
+            margin-left: 1.5em;
+            a {
+                color: #fff;
+                font-size: 1.2em;
+            }
+            
+        }
+
+    }
+    #log-icon {
+        position: absolute;
+        right: 10px;
+        display: inline-block;
+    }
+
+}
+
 .navbar {
     padding: 0;
     margin: 0;  
     position: sticky;
     top: 0;
     background: $info;
-    z-index: 2;
-        ul {
-            margin-top: 0.7em;
-            padding: 0;
-            li {
-                display: inline-block;
-                list-style-type: none;
-                padding: 0;
-                margin-left: 1.5em;
-                a {
-                    color: #FFF;
-                    font-size: 1.2em;
-
-                }
-
-            }
-
-            li:hover a {
-                color: darken(#fff, 20%);
-        }
-        
+    z-index: 3;
+    min-width: 100%;
+    min-height: 58px;
+    display: flex;
+    justify-content: flex-start;
+    @media only screen and (min-width: 1199.98px) {
+		@include large-desktop();
     }
 
+    @media only screen and (max-width: 1199.98px) {
+        @include large-desktop();
+    }
+    
+    @media only screen and (max-width: 991.98px) {
+		@include large-desktop();
+    }
+
+    @media only screen and (max-width: 767.98px) {
+
+        @include medium-desktop();
+    }
+    
+    @media only screen and (max-width: 575.98px) {
+        @include medium-desktop();
+    }
+    
 }
 

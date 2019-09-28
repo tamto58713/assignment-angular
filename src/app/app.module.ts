@@ -21,7 +21,8 @@ import { ListSubjectsComponent } from './components/list-subjects/list-subjects.
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ExamComponent } from './pages/exam/exam.component';
-import { ChangeProfileComponent } from './pages/change-profile/change-profile.component'
+import { ChangeProfileComponent } from './pages/change-profile/change-profile.component';
+import { QandAComponent } from './pages/qand-a/qand-a.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import { ChangeProfileComponent } from './pages/change-profile/change-profile.co
     ListSubjectsComponent,
     PaginationComponent,
     ExamComponent,
-    ChangeProfileComponent
+    ChangeProfileComponent,
+    QandAComponent
   ],
   imports: [
     BrowserModule,

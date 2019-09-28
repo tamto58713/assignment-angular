@@ -11,7 +11,15 @@ export class NavBarComponent implements OnInit {
   isLoggedIn = false;
   ngOnInit() {
     if (this.authService.isAuthenticated())
-      this.isLoggedIn = true;
+      this.isLoggedIn = !this.isHidden;
+
+    
+  }
+
+  isHidden = true
+
+  onClickIcon() {
+    this.isHidden = !this.isHidden
   }
 
 }
