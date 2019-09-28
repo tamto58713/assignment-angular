@@ -7,6 +7,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ChangePasswordComponent } from './pages/change-password/change-password.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ExamComponent } from './pages/exam/exam.component';
+import { ChangeProfileComponent } from './pages/change-profile/change-profile.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: "about", component: AboutComponent},
   { path: "contact", component: ContactComponent},
   { path: "setting/security", component: ChangePasswordComponent},
+  { path: "setting/profile", component: ChangeProfileComponent},
   { path: "test/:id", component: ExamComponent}
 
 ];

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title }     from '@angular/platform-browser';
 
 @Component({
   selector: 'app-change-password',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChangePasswordComponent implements OnInit {
 
-  constructor() { }
+  constructor(private title: Title) { 
+    title.setTitle("Change Password")
+  }
 
   ngOnInit() {
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title }     from '@angular/platform-browser';
 import { AuthService } from "../../services/auth.service"
 import { User } from '../../user' 
 @Component({
@@ -14,7 +15,9 @@ export class RegisterComponent implements OnInit {
     password: "",
     phone: ""
   }
-  constructor(private _auth: AuthService) { }
+  constructor(private _auth: AuthService, private title: Title) { 
+    title.setTitle("Register")
+  }
 
   ngOnInit() {
   }

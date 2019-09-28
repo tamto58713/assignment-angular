@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { Title }     from '@angular/platform-browser';
 
 
 @Component({
@@ -8,7 +9,9 @@ import { Component, OnInit} from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(private title: Title) {
+    title.setTitle("Contact")
+   }
   ngOnInit() {
   }
 

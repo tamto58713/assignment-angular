@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title }     from '@angular/platform-browser';
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 
 import { User } from '../../user'
@@ -17,8 +18,9 @@ export class LoginComponent implements OnInit {
     email: '',
     password: ''
   };
-  constructor(private authService: AuthService, private _router: Router, private fb: FormBuilder) { 
+  constructor(private title: Title, private authService: AuthService, private _router: Router, private fb: FormBuilder) { 
     this.createForm();
+    title.setTitle("Login")
   }
 
   createForm() {

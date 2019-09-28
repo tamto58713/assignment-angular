@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title }     from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router'; 
 import { Location } from '@angular/common'; 
 import { formatTime } from "../../services/formatTime"
@@ -30,7 +31,9 @@ import { WEBU } from "../../Quizs/WEBU"
   styleUrls: ['./exam.component.scss']
 })
 export class ExamComponent implements OnInit {
-  constructor(private route: ActivatedRoute, private location: Location, private _router: Router) {}
+  constructor(private title: Title, private route: ActivatedRoute, private location: Location, private _router: Router) {
+    title.setTitle("Test")
+  }
 
   listChoose = []
   listSubjects = []

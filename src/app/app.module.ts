@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
@@ -20,7 +20,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { ListSubjectsComponent } from './components/list-subjects/list-subjects.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { ExamComponent } from './pages/exam/exam.component'
+import { ExamComponent } from './pages/exam/exam.component';
+import { ChangeProfileComponent } from './pages/change-profile/change-profile.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { ExamComponent } from './pages/exam/exam.component'
     AboutComponent,
     ListSubjectsComponent,
     PaginationComponent,
-    ExamComponent
+    ExamComponent,
+    ChangeProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,9 @@ import { ExamComponent } from './pages/exam/exam.component'
     ReactiveFormsModule,
     NgxPaginationModule
   ],
-  providers: [],
+  providers: [
+    Title
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
