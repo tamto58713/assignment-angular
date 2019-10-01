@@ -1,132 +1,239 @@
 $info: #17a2b8;
+$info2: #25c1e7;
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
-
-@mixin toggle-icon {
-    z-index: 4;
-    display: block;
-    width: 20px;
-    height: 4px;
-    background: #000;
-    position: absolute;
-    content: "";
-}
-
-@mixin medium-desktop {
-    .icon {
-        cursor: pointer;
-        #toggle-icon {
-            @include toggle-icon();
-            top: 20px;
-            right: 15px;
-        }
-    
-        #toggle-icon::before {
-            @include toggle-icon();
-            top: -6px;  
-        }
-    
-        #toggle-icon::after {
-            @include toggle-icon();
-            top: 6px;  
-        }
-    }
-   
-    .visible,
-    .hidden {
-        overflow: hidden;
-    /* This container should not have padding, borders, etc. */
-    }
-
-
-    .visible {
-        height: 200px;
-        top: 0px;   
-    }
-    .hidden {
-        top: -100px;
-        height: 58px;
-        visibility: hidden;
-        transition: visibility 0ms;
-    }
-
-    ul {
-        padding-top: 1em;
-        background: $info;
-        width: 100%;
-        position: absolute;
-        transition-duration: .5s;
-        li {
-            display: block;
-            margin-top: 0.5em;
-        }
-    }
-    
-    #log-icon {
-        position: absolute;
-        right: 10px; 
-        bottom: 10px;
-        display: inline-block;
-    }
-
-}
-
-@mixin large-desktop {
-    flex-grow: 1;
-    padding-top: 0.1em;
-    ul {
-        display: inline-block;
-        list-style: none;
-        li {
+.navbar {
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    background: $info2;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    .contact-header {
+        display: block;
+        width: 100vw;
+        height: 50px;
+        box-sizing: border-box;
+        .contact {
+            padding: 15px 0 0 100px;
             display: inline-block;
+            height: 50px;
+            span {
+                color: #fff;
+                a {
+                    color: #fff;
+                }
+                margin: 0 15px;
+            }
 
-            margin-left: 1.5em;
+            span:first-child {
+                margin: 0;
+            }
+    
+            span:hover {
+                a {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .login-by {
+            display: inline-block;
             a {
                 color: #fff;
-                font-size: 1.2em;
+            }
+        }
+    }
+
+    .nav {
+        display: block;
+        background: #f9f9f9 ;
+        position: sticky;
+        top: 51px;
+        width: 100vw;
+        height: 94px;
+        span {
+            display: inline-block;
+            padding-top: 33px;
+            padding-left: 50px;
+        }
+
+        .nav-list {
+            display: inline-block;
+            padding-left: 150px;
+            text-transform: uppercase;
+            .nav-item {
+                display: inline-block;
+                padding: 10px 10px 1px 10px;
+                margin: 5px;
+                a {
+                    color: #333333;
+                }
+
+                @keyframes hover-down {
+                    0% {padding-bottom: 1px; box-shadow: 0 3px 0 lighten($info2, 10%);}
+                    100% {padding-bottom: 10px; box-shadow: 0 1px 0 lighten($info2, 90%);}
+                }
+
+                animation: hover-down .5s;
+
+            }
+
+            .active {
+                a {
+                    color: $info2;
+                }
+            }
+
+            .nav-item:hover {
+                @keyframes hover-up {
+                    0% {padding-bottom: 10px; box-shadow: 0 1px 0 lighten($info2, 90%);}
+                    100% {padding-bottom: 2px; box-shadow: 0 3px 0 lighten($info2, 10%);}
+                }
+                animation: hover-up .3s;
+                box-shadow: 0px 3px 0px $info2;
+            }
+
+            .btn-group {
+                display: inline-block;
             }
             
         }
-
-    }
-    #log-icon {
-        position: absolute;
-        right: 10px;
-        display: inline-block;
     }
 
 }
-
-.navbar {
-    padding: 0;
-    margin: 0;  
-    position: sticky;
-    top: 0;
-    background: $info;
-    z-index: 3;
-    min-width: 100%;
-    min-height: 58px;
-    display: flex;
-    justify-content: flex-start;
-    @media only screen and (min-width: 1199.98px) {
-		@include large-desktop();
-    }
-
-    @media only screen and (max-width: 1199.98px) {
-        @include large-desktop();
-    }
     
-    @media only screen and (max-width: 991.98px) {
-		@include large-desktop();
-    }
 
-    @media only screen and (max-width: 767.98px) {
 
-        @include medium-desktop();
-    }
+// @mixin toggle-icon {
+//     z-index: 4;
+//     display: block;
+//     width: 20px;
+//     height: 4px;
+//     background: #000;
+//     position: absolute;
+//     content: "";
+// }
+
+// @mixin medium-desktop {
+//     .icon {
+//         cursor: pointer;
+//         #toggle-icon {
+//             @include toggle-icon();
+//             top: 20px;
+//             right: 15px;
+//         }
     
-    @media only screen and (max-width: 575.98px) {
-        @include medium-desktop();
-    }
+//         #toggle-icon::before {
+//             @include toggle-icon();
+//             top: -6px;  
+//         }
     
-}
+//         #toggle-icon::after {
+//             @include toggle-icon();
+//             top: 6px;  
+//         }
+//     }
+   
+//     .visible,
+//     .hidden {
+//         overflow: hidden;
+//     /* This container should not have padding, borders, etc. */
+//     }
+
+
+//     .visible {
+//         height: 200px;
+//         top: 0px;   
+//     }
+//     .hidden {
+//         top: -100px;
+//         height: 58px;
+//         visibility: hidden;
+//         transition: visibility 0ms;
+//     }
+
+//     ul {
+//         padding-top: 1em;
+//         background: $info;
+//         width: 100%;
+//         position: absolute;
+//         transition-duration: .5s;
+//         li {
+//             display: block;
+//             margin-top: 0.5em;
+//         }
+//     }
+    
+//     #log-icon {
+//         position: absolute;
+//         right: 10px; 
+//         bottom: 10px;
+//         display: inline-block;
+//     }
+
+// }
+
+// @mixin large-desktop {
+//     flex-grow: 1;
+//     padding-top: 0.1em;
+//     ul {
+//         display: inline-block;
+//         list-style: none;
+//         li {
+//             display: inline-block;
+
+//             margin-left: 1.5em;
+//             a {
+//                 color: #fff;
+//                 font-size: 1.2em;
+//             }
+            
+//         }
+
+//     }
+//     #log-icon {
+//         position: absolute;
+//         right: 10px;
+//         display: inline-block;
+//     }
+
+// }
+
+// .navbar {
+//     padding: 0;
+//     margin: 0;  
+//     position: sticky;
+//     top: 0;
+//     background: $info;
+//     z-index: 3;
+//     min-width: 100%;
+//     min-height: 58px;
+//     display: flex;
+//     justify-content: flex-start;
+//     @media only screen and (min-width: 1199.98px) {
+// 		@include large-desktop();
+//     }
+
+//     @media only screen and (max-width: 1199.98px) {
+//         @include large-desktop();
+//     }
+    
+//     @media only screen and (max-width: 991.98px) {
+// 		@include large-desktop();
+//     }
+
+//     @media only screen and (max-width: 767.98px) {
+
+//         @include medium-desktop();
+//     }
+    
+//     @media only screen and (max-width: 575.98px) {
+//         @include medium-desktop();
+//     }
+    
+// }
 

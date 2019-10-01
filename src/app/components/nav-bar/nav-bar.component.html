@@ -1,4 +1,70 @@
 <div class="navbar">
+  <div class="contact-header row">
+    <div class="contact col-lg-6">
+      <span>Have any question?</span>
+      <span><a href="tel: 0355933881">0355933881</a></span>
+      <span><a href="mailto: tamtotran5667@gmail.com">tamtotran5667@gmail.com</a></span>
+    </div>
+    <div class="login-by col-lg-2 offset-lg-3">
+      <a class="mx-3">
+        <mdb-icon fab icon="facebook"></mdb-icon>
+        </a>
+        <a class="mx-3">
+        <mdb-icon fab icon="twitter"></mdb-icon>
+        </a>
+        <a class="mx-3">
+        <mdb-icon fab icon="linkedin"></mdb-icon>
+        </a>
+        <a class="mx-3">
+        <mdb-icon fab icon="github"></mdb-icon>
+        </a>
+    
+    </div>
+  </div>
+  
+  <div class="nav row">
+    <span id="logo" class="col-lg-2">TEST</span>
+    <div class="nav-list col-lg-8 offset-lg-2">
+
+      <div class="nav-item active">
+        <a routerLink="/">Home</a>
+      </div>
+
+      <div class="nav-item">
+        <a routerLink="/about">About</a>
+      </div>
+
+      <div class="nav-item">
+        <a routerLink="/pages">Pages</a>
+      </div>
+
+      <div class="nav-item">
+        <a routerLink="/blog">Blog</a>
+      </div>
+
+      <div class="nav-item">
+        <a routerLink="/exam">Exam</a>
+      </div>
+
+      <!-- <div class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="cog"></mdb-icon> Settings</a>
+      </div> -->
+
+      <div class="btn-group nav-item" *ngIf="!isLoggedIn">
+          <a routerLink="/login"><button mdbBtn type="button" color="dark" class="waves-light mr-1" size="sm" mdbWavesEffect>Sign in</button></a> 
+          <a routerLink="/register"><button mdbBtn type="button" color="dark" class="waves-light" size="sm" mdbWavesEffect>Sign up</button></a>
+      </div>
+
+    </div> 
+  </div>
+</div>
+
+
+
+
+
+<!-- 
+<div class="navbar">
   <div class="icon">
     <span (click)="onClickIcon()" id="toggle-icon"></span>
   </div>
@@ -20,4 +86,4 @@
         </li>
         </div>
       </ul>
-  </div>
+  </div> -->

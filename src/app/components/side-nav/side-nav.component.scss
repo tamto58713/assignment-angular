@@ -9,40 +9,21 @@ $violet: #A53860;
     content: "";
 }
 .side-bar {
-    position: fixed;
-    width: 17.5%;
+    position: sticky;
+    top: 0;
+    background: lighten(#ddd, 5%);
+    width: 100%;
     box-sizing: border-box;
-    height: 100vh;
     overflow-y: scroll;
-    // #toggle-icon {
-    //     @include toggle-icon();
-    //     top: 10px;
-    //     right: -25px;
-    // }
 
-    // #toggle-icon::before {
-    //     @include toggle-icon();
-    //     top: -6px;  
-    // }
-
-    // #toggle-icon::after {
-    //     @include toggle-icon();
-    //     top: 6px;  
-    // }
     .title {
-        background: rgb(236, 233, 233);
-        position: sticky;
-        top: 0px;
+        background: rgb(182, 96, 187);
         padding: 10px;
         text-transform: uppercase;
         font-weight: bold;
         font-family: Georgia, 'Times New Roman', Times, serif;
         text-align: center;
         color: rgb(46, 7, 7);
-
-    }
-    .text {
-        min-height: 900px;
     }
     .subject {
         padding: 0.5em 0.5em 0.5em 1em;
@@ -62,8 +43,6 @@ $violet: #A53860;
 
 .side-bar::-webkit-scrollbar-track
 {
-	border-radius: 10px;
-    background-color: #fff;
     visibility: hidden;
 }
 .side-bar::-webkit-scrollbar
@@ -73,8 +52,6 @@ $violet: #A53860;
 
 ::-webkit-scrollbar-thumb
 {
-	background-color: #FFF;
-	background-image: -webkit-linear-gradient(-20deg,
-											  rgba(0, 0, 0, 1) 25%,
-											  transparent 100%)
+    visibility: hidden;
+
 }

@@ -30,6 +30,7 @@ import { WEBU } from "../../Quizs/WEBU"
   templateUrl: './exam.component.html',
   styleUrls: ['./exam.component.scss']
 })
+
 export class ExamComponent implements OnInit {
   constructor(private title: Title, private route: ActivatedRoute, private location: Location, private _router: Router) {
     title.setTitle("Test")
@@ -38,6 +39,8 @@ export class ExamComponent implements OnInit {
   listChoose = []
   listSubjects = []
   changed(choose, index) {
+    console.log(this.listChoose, choose, index)
+
     this.listChoose[index] = choose
   }
 
@@ -47,6 +50,16 @@ export class ExamComponent implements OnInit {
     return formatTime(time)
   }
 
+  submit() {
+    let mark = 0
+    for (let i = 0; i < this.listSubjects.length; i++) {
+
+      if ((this.listChoose[i] > 0) && (this.listSubjects[i].Answers[this.listChoose[i] - 1].Id === this.listSubjects[i].AnswerId))
+        ++mark;
+    }
+
+    console.log("mark:", mark)
+  }
   ngOnInit() {
     // Get id from url
     this.route.paramMap.subscribe(params => {
@@ -125,5 +138,6 @@ export class ExamComponent implements OnInit {
       --this.time 
     }, 1000)
   }
+
 
 }

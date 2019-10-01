@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: "q&a", component: QandAComponent},
   { path: "setting/security", component: ChangePasswordComponent},
   { path: "setting/profile", component: ChangeProfileComponent},
-  { path: "test/:id", component: ExamComponent}
+  { path: "test/:id", component: ExamComponent},
 
 ];
 
