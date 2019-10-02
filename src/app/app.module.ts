@@ -22,7 +22,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ExamComponent } from './pages/exam/exam.component';
 import { ChangeProfileComponent } from './pages/change-profile/change-profile.component';
 import { QandAComponent } from './pages/qand-a/qand-a.component';
-import { BannerComponent } from './components/banner/banner.component'
+import { BannerComponent } from './components/banner/banner.component';
+import { ContentComponent } from './components/content/content.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import { BannerComponent } from './components/banner/banner.component'
     ExamComponent,
     ChangeProfileComponent,
     QandAComponent,
-    BannerComponent
+    BannerComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,

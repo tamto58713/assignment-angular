@@ -1,0 +1,40 @@
+$info: #25c1e7;
+
+.content {
+    .list-subjects {
+        .title {
+            font-size: 30px;
+            font-family: "monserrat";
+            display: inline-block;
+            font-weight: bold;
+            padding: 15px;
+
+        }
+
+        .list {
+            display: flex;
+            flex-direction: row;
+            overflow: scroll;
+            .subject {
+                background: $info;
+                cursor: pointer;
+                color: #fff;
+                margin: 15px;   
+                width: 210px;
+                height: 179px;
+                padding: 50px;
+                text-align: center;
+                i {
+                    font-size: 50px;
+                }
+
+                .text {
+                    margin-top: 15px;
+                    font-size: 15px;
+                    font-family: "Montserrat";
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

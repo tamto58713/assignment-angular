@@ -1,0 +1,15 @@
+<div class="content">
+    <div class="list-subjects">
+        <div class="title">
+            Browse Subjects by Categories
+        </div>
+        <div class="list">
+            <div class="subject" *ngFor="let subject of subjects">
+                <i [class]="subject.class" class="icon"></i>
+                <div class="text">
+                    {{ subject.name }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
