@@ -1,11 +1,11 @@
 <div class="navbar">
   <div class="contact-header row">
-    <div class="contact col-lg-6">
+    <div class="contact col-sm-12 col-md-9">
       <span>Have any question?</span>
       <span><a href="tel: 0355933881">0355933881</a></span>
       <span><a href="mailto: tamtotran5667@gmail.com">tamtotran5667@gmail.com</a></span>
     </div>
-    <div class="login-by col-lg-2 offset-lg-3">
+    <div class="login-by col-sm-12 col-md-3 offset-md-3">
       <a class="mx-3">
         <mdb-icon fab icon="facebook"></mdb-icon>
         </a>
@@ -50,7 +50,7 @@
           <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="cog"></mdb-icon> Settings</a>
       </div> -->
 
-      <div class="btn-group nav-item" *ngIf="!isLoggedIn">
+      <div class="btn-group" *ngIf="!isLoggedIn">
           <a routerLink="/login"><button mdbBtn type="button" color="dark" class="waves-light mr-1" size="sm" mdbWavesEffect>Sign in</button></a> 
           <a routerLink="/register"><button mdbBtn type="button" color="dark" class="waves-light" size="sm" mdbWavesEffect>Sign up</button></a>
       </div>

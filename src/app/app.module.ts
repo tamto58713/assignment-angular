@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { HomeComponent } from './pages/home/home.component';
-import { CarouselComponent } from './components/carousel/carousel.component';
 import { SideTopServerComponent } from './components/side-top-server/side-top-server.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -22,14 +21,14 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ExamComponent } from './pages/exam/exam.component';
 import { ChangeProfileComponent } from './pages/change-profile/change-profile.component';
-import { QandAComponent } from './pages/qand-a/qand-a.component'
+import { QandAComponent } from './pages/qand-a/qand-a.component';
+import { BannerComponent } from './components/banner/banner.component'
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     SideNavComponent,
     HomeComponent,
-    CarouselComponent,
     SideTopServerComponent,
     ContactComponent,
     LoginComponent,
@@ -41,7 +40,8 @@ import { QandAComponent } from './pages/qand-a/qand-a.component'
     PaginationComponent,
     ExamComponent,
     ChangeProfileComponent,
-    QandAComponent
+    QandAComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
