@@ -15,7 +15,7 @@ const port = 8080
 //   { useNewUrlParser: true }
 // ).then(() => console.log("Database is Connected!"), (err) => console.log("Can't connect to the Database"))
 
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../dist/assignment-angular')))
 // app.use(cors())
 
