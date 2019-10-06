@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../../services/auth.service"
+import { Router } from "@angular/router"
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -7,13 +8,15 @@ import { AuthService } from "../../services/auth.service"
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router ) { }
   isLoggedIn = false;
+  isHome = false;
   ngOnInit() {
     if (this.authService.isAuthenticated())
       this.isLoggedIn = !this.isHidden;
-
     
+    if (this.router.url === "/")
+      this.isHome = true;
   }
 
   isHidden = true

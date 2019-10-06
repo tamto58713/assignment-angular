@@ -23,7 +23,9 @@ import { ExamComponent } from './pages/exam/exam.component';
 import { ChangeProfileComponent } from './pages/change-profile/change-profile.component';
 import { QandAComponent } from './pages/qand-a/qand-a.component';
 import { BannerComponent } from './components/banner/banner.component';
-import { ContentComponent } from './components/content/content.component'
+import { ContentComponent } from './components/content/content.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ListExamComponent } from './pages/list-exam/list-exam.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +45,9 @@ import { ContentComponent } from './components/content/content.component'
     ChangeProfileComponent,
     QandAComponent,
     BannerComponent,
-    ContentComponent
+    ContentComponent,
+    FooterComponent,
+    ListExamComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ExamComponent } from './pages/exam/exam.component';
 import { ChangeProfileComponent } from './pages/change-profile/change-profile.component';
 import { QandAComponent } from './pages/qand-a/qand-a.component';
+import { ListExamComponent } from './pages/list-exam/list-exam.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -20,7 +21,7 @@ const routes: Routes = [
   { path: "setting/security", component: ChangePasswordComponent},
   { path: "setting/profile", component: ChangeProfileComponent},
   { path: "test/:id", component: ExamComponent},
-
+  { path: "exam", component: ListExamComponent}
 ];
 
 @NgModule({

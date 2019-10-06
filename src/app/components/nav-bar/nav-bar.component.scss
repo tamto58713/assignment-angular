@@ -1,7 +1,7 @@
 $info: #17a2b8;
 $info2: #25c1e7;
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');
 .navbar {
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
@@ -76,6 +76,10 @@ $info2: #25c1e7;
                     color: #333333;
                 }
 
+                .active {
+                    color: $info2;
+                }
+
                 @keyframes hover-down {
                     0% {padding-bottom: 1px; box-shadow: 0 3px 0 lighten($info2, 10%);}
                     100% {padding-bottom: 10px; box-shadow: 0 1px 0 lighten($info2, 90%);}
@@ -83,12 +87,6 @@ $info2: #25c1e7;
 
                 animation: hover-down .3s;
 
-            }
-
-            .active {
-                a {
-                    color: $info2;
-                }
             }
 
             .nav-item:hover {
@@ -102,6 +100,12 @@ $info2: #25c1e7;
 
             .btn-group {
                 display: inline-block;
+                button {
+                    background: $info2;
+                    color: #fff;
+                    font-weight: 400;
+                    font-family: 'Fira Code', monospace;
+                }
             }
             
         }
