@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common'; 
 import { formatTime } from "../../services/formatTime"
 
+import { subjects } from '../../subjects'
 import { ADBS } from "../../Quizs/ADBS"
 import { ADAV } from "../../Quizs/ADAV"
 import { ADTE } from "../../Quizs/ADTE"
@@ -38,12 +39,13 @@ export class ExamComponent implements OnInit {
 
   listChoose = []
   listSubjects = []
-  changed(choose, index) {
-    console.log(this.listChoose, choose, index)
+  config: any
+  
 
+  changed(choose, index) {
     this.listChoose[index] = choose
   }
-
+  sub
   time = 60 * 60
   // Format: hh:mm:ss
   format(time) {
@@ -60,10 +62,36 @@ export class ExamComponent implements OnInit {
 
     console.log("mark:", mark)
   }
+
+  onGetFirstPage() {
+    this.config = {...this.config, currentPage: 1}
+  }
+
+  onPrevPage() {
+    if (this.config.currentPage > 1)
+      this.config = {...this.config, currentPage: --this.config.currentPage}
+  }
+  onNextPage() {
+    if (this.config.currentPage < (this.config.totalItems / this.config.itemsPerPage))
+      this.config = {...this.config, currentPage: ++this.config.currentPage}
+  }
+
+  onGetLastPage() {
+    this.config = {...this.config, currentPage: (this.config.totalItems / this.config.itemsPerPage)}
+  }
+  
+  ceil(number) {
+    return Math.ceil(number)
+  }
+
   ngOnInit() {
     // Get id from url
     this.route.paramMap.subscribe(params => {
       let id = params.get('id').toLocaleUpperCase()
+      this.sub = subjects.filter(subject => {
+        return subject.id === id
+      })[0]
+      
       switch (id) {
         case "ADAV": this.listSubjects = [...ADAV]
         break
@@ -128,6 +156,14 @@ export class ExamComponent implements OnInit {
       }
 
     })
+
+    this.config = {
+      itemsPerPage: 1,
+      currentPage: 1,
+      totalItems: this.listSubjects.length
+    };
+
+
 
     this.listChoose = this.listSubjects.map((subjects) => {
       return 0
