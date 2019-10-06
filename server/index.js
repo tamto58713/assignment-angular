@@ -15,7 +15,7 @@ const app = express();
 // ).then(() => console.log("Database is Connected!"), (err) => console.log("Can't connect to the Database"))
 
 // app.use(bodyParser.json());
-// app.use(express.static(path.join(__dirname, '../dist/assignment-angular')))
+app.use(express.static(path.join(__dirname, '../dist/assignment-angular')))
 // app.use(cors())
 
 // app.post('/register', (req, res) => {
