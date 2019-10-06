@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
+const port = 8080
 // cors = require('cors')
 // const mongoose = require("mongoose");
 // const config = require('./config')
@@ -56,8 +57,8 @@ app.use(express.static(path.join(__dirname, '../dist/assignment-angular')))
 
 
 
-app.get("*", (req, res) => {
+app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/assignment-angular/index.html'))
 });
 
-app.listen(8080, () => console.log("Listening on port 8080..."));
+app.listen(port, () => console.log(`Listening on port ${port}...`));
