@@ -46,15 +46,31 @@
         <a routerLink="/exam" routerLinkActive="active">Exam</a>
       </div>
 
-      <!-- <div class="nav-item">
-          <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="cog"></mdb-icon> Settings</a>
-      </div> -->
+      <div class="nav-item" *ngIf="isLoggedIn">
+         
+
+      <div class="dropdown">
+
+  <!--Trigger-->
+  <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="dropdownMenu1" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false"> <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="cog"></mdb-icon>
+
+      Settings</a></button>
+
+  <!--Menu-->
+  <div class="dropdown-menu dropdown-primary">
+    <a class="dropdown-item" href="#">My Profile</a>
+    <a class="dropdown-item" href="#">My Status</a>
+    <a class="dropdown-item" href="#">Other</a>
+    <a class="dropdown-item" href="#" (click)=onLogout()>Logout</a>
+  </div>
+</div>
+      </div>
 
       <div class="btn-group" *ngIf="!isLoggedIn">
           <a routerLink="/login"><button mdbBtn type="button" class="mr-1 ml-5" size="sm" mdbWavesEffect>Sign in</button></a> 
           <a routerLink="/register"><button mdbBtn type="button" size="sm" mdbWavesEffect>Sign up</button></a>
       </div>
-
     </div> 
   </div>
 </div>

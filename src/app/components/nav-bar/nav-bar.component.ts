@@ -13,16 +13,18 @@ export class NavBarComponent implements OnInit {
   isHome = false;
   ngOnInit() {
     if (this.authService.isAuthenticated())
-      this.isLoggedIn = !this.isHidden;
+      this.isLoggedIn = true;
     
     if (this.router.url === "/")
       this.isHome = true;
   }
 
-  isHidden = true
-
-  onClickIcon() {
-    this.isHidden = !this.isHidden
+  onLogout() {
+    this.authService.logout();
   }
+
+  // onClickIcon() {
+  //   this.isHidden = !this.isHidden
+  // }
 
 }

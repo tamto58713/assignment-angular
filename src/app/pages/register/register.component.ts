@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { AuthService } from "../../services/auth.service"
 import { User } from '../../user' 
 @Component({
@@ -8,6 +9,7 @@ import { User } from '../../user'
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  err
   user: User = {
     firstName: "",
     lastName: "",
@@ -15,7 +17,7 @@ export class RegisterComponent implements OnInit {
     password: "",
     phone: ""
   }
-  constructor(private _auth: AuthService, private title: Title) { 
+  constructor(private _router: Router, private _auth: AuthService, private title: Title) { 
     title.setTitle("Register")
   }
 
@@ -23,10 +25,11 @@ export class RegisterComponent implements OnInit {
   }
 
   register(theUser: User) {
-    console.log("Hey")
-    this._auth.register(theUser).subscribe(data => {
-      console.log(data)
-    }, (err) => console.log(err))
+    this._auth.register(theUser).subscribe((data: any) => {
+      this._router.navigate(['/login']);
+    }, (err) => {
+      this.err = true
+    })
   }
 
 }

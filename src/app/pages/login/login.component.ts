@@ -30,21 +30,22 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  errs = false;
+  err = false;
   ngOnInit() {
     if (this.authService.isAuthenticated())
       this._router.navigate(['/'])
   }
 
   login(theUser: User) {
-    this.authService.login(theUser).subscribe((data: {user: {_id}, errs: []} )=> {
-      if (data.errs.length > 0)
-        this.errs = true
-      else {
-        this.errs = false;
-        this._router.navigate(['/'])
-        localStorage.setItem('user', JSON.stringify({id: data.user._id}));
-      }        
+    this.authService.login(theUser).subscribe((data: any )=> {
+        if (data.err) 
+          this.err = true;
+        else if (data.email) {
+          this._router.navigate(['/'])
+          localStorage.setItem('_id', JSON.stringify(data._id));
+        }
+    }, err => {
+      console.log("err")
     });
   }
 

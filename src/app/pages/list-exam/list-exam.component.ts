@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { subjects } from "../../subjects"
 
+import { Router } from '@angular/router';
+import { AuthService } from "../../services/auth.service"
+
 @Component({
   selector: 'app-list-exam',
   templateUrl: './list-exam.component.html',
@@ -8,10 +11,14 @@ import { subjects } from "../../subjects"
 })
 export class ListExamComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router: Router, private _auth: AuthService) { }
   listSubjects
   ngOnInit() {
-    this.listSubjects = [...subjects]
+    if (localStorage.getItem("_id"))
+      this.listSubjects = [...subjects]
+    else 
+      this._router.navigate(["/login"]);
+      
   }
 
 }
