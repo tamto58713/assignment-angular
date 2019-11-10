@@ -18,7 +18,6 @@ export class ListExamComponent implements OnInit {
       this.listSubjects = [...subjects]
     else 
       this._router.navigate(["/login"]);
-      
   }
 
 }

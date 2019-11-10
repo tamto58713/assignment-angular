@@ -22,14 +22,19 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this._auth.isAuthenticated())
+      this._router.navigate(['/'])
   }
 
   register(theUser: User) {
     this._auth.register(theUser).subscribe((data: any) => {
-      this._router.navigate(['/login']);
+      if (data.err)
+        this.err = true
+      else if (data.email)
+        this._router.navigate(['/login']);
     }, (err) => {
       this.err = true
     })
-  }
+  } 
 
 }

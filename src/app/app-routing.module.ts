@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -10,6 +10,7 @@ import { ExamComponent } from './pages/exam/exam.component';
 import { ChangeProfileComponent } from './pages/change-profile/change-profile.component';
 import { QandAComponent } from './pages/qand-a/qand-a.component';
 import { ListExamComponent } from './pages/list-exam/list-exam.component';
+import { ResultComponent } from './pages/result/result.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: "setting/security", component: ChangePasswordComponent},
   { path: "setting/profile", component: ChangeProfileComponent},
   { path: "test/:id", component: ExamComponent},
-  { path: "exam", component: ListExamComponent}
+  { path: "exam", component: ListExamComponent},
+  { path: "test/:id/result", component: ResultComponent}
 ];
 
 @NgModule({

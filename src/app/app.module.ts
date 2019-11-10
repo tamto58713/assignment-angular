@@ -1,6 +1,7 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { ChartsModule } from 'ng2-charts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,7 +26,8 @@ import { QandAComponent } from './pages/qand-a/qand-a.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { ContentComponent } from './components/content/content.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ListExamComponent } from './pages/list-exam/list-exam.component'
+import { ListExamComponent } from './pages/list-exam/list-exam.component';
+import { ResultComponent } from './pages/result/result.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +49,8 @@ import { ListExamComponent } from './pages/list-exam/list-exam.component'
     BannerComponent,
     ContentComponent,
     FooterComponent,
-    ListExamComponent
+    ListExamComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,8 @@ import { ListExamComponent } from './pages/list-exam/list-exam.component'
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ChartsModule
   ],
   providers: [
     Title

@@ -2,7 +2,7 @@
 <div class="list-exam container row">
     <div class="content col-md-10 row" >
         <div class="card col-6 col-md-4" *ngFor="let subject of listSubjects">
-            <img height="120px" [src]="'assets/images/logos/' + subject.imageUrl" class="card-img-top" alt="...">
+            <img width="30%" [src]="'assets/images/logos/' + subject.imageUrl" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title mb-4">{{subject.name}}</h5>
               <a [routerLink]="['/test/', subject.id]" class="btn btn-primary btn-sm" style="position: absolute; bottom: 0">Try it</a>
